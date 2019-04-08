@@ -49,7 +49,7 @@
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
                             <TextBlock DockPanel.Dock="Bottom" Margin="10" FontSize="15" HorizontalAlignment="Center"> rudder</TextBlock>
-                            <TextBlock DockPanel.Dock="Top" Margin="10" FontSize="15" HorizontalAlignment="Center"> aileron</TextBlock>
+                            <TextBlock DockPanel.Dock="Top" Margin="10" FontSize="15" HorizontalAlignment="Center"> &#x27f5; aileron &#x27f6; </TextBlock>
                             <Slider x:Name="rudder" Minimum="0" Maximum="10" Value="5" TickFrequency="1" TickPlacement="BottomRight" DockPanel.Dock="Bottom" Margin="100,5,70,5"/>
                             <TextBlock Text="throttle" DockPanel.Dock="Left" Margin="10" FontSize="15" VerticalAlignment="Center">
                                 <TextBlock.LayoutTransform>
