@@ -21,7 +21,10 @@ namespace FlightSimulator.Views.Windows
     {
         public Settings()
         {
-            InitializeComponent();
+            //הוא לא נותן לי משום מה לעשות את המתודה הזו????
+            //InitializeComponent();
         }
+
+
     }
 }

@@ -15,12 +15,12 @@
 
                 </TextBox>
                 <WrapPanel HorizontalAlignment="Center">
-                    <Button Content="OK" Margin="10" Style="{StaticResource connect and settings}" Click="OKTextClicked">
+                    <Button Content="OK" Margin="10">
 
                     </Button>
-                    <Button Content="Clear" Margin="10" Style="{StaticResource connect and settings}" Click="ClearTextClicked">
+                    <Button Content="Clear" Margin="10"/>
 
-                    </Button>
+
                 </WrapPanel>
             </StackPanel>
         </ScrollViewer>

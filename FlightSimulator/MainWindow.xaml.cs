@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightSimulator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace FlightSimulator
 {
     /// <summary>
@@ -19,9 +21,13 @@ namespace FlightSimulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IViewModel vm;
+
         public MainWindow()
         {
             InitializeComponent();
+            //vm = new viewModel כלשהו 
+            this.DataContext = vm;
         }
     }
 }

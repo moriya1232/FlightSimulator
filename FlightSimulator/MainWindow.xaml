@@ -69,8 +69,8 @@
                 <DockPanel>
                     <GroupBox FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top">
                         <WrapPanel>
-                            <Button Name="Connect" Content="Connect" Style="{StaticResource connect and settings}" Click="ConnentClicked"/>
-                            <Button Name="Settings" Content="Settings" Style="{StaticResource connect and settings}" Click="SettingsClicked" />
+                            <Button Name="Connect" Content="Connect" Style="{StaticResource connect and settings}"/>
+                            <Button Name="Settings" Content="Settings" Style="{StaticResource connect and settings}"/>
                         </WrapPanel>
                     </GroupBox>
                     <Views:FlightBoard/>
