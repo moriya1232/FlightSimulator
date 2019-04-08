@@ -85,6 +85,9 @@
     <Compile Include="Views\TextScript.xaml.cs">
       <DependentUpon>TextScript.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GridAndButtomsConnection.xaml.cs">
+      <DependentUpon>GridAndButtomsConnection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TextScript.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GridAndButtomsConnection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

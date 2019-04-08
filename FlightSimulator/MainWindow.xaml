@@ -30,11 +30,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="520*"/>
-            <ColumnDefinition Width="59*"/>
-            <ColumnDefinition Width="242*"/>
-        </Grid.ColumnDefinitions>
         <ScrollViewer Grid.ColumnSpan="3" Margin="0,0,0.334,-0.333">
             <DockPanel LastChildFill="true" Margin="0,0,3,-1">
                 <Label Content="Flight Simulator" FontSize="25" HorizontalAlignment="Center" Foreground="Purple" DockPanel.Dock="Top"/>
@@ -70,7 +65,7 @@
                     <GroupBox FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top">
                         <WrapPanel>
                             <Button Name="Connect" Content="Connect" Style="{StaticResource connect and settings}"/>
-                            <Button Name="Settings" Content="Settings" Style="{StaticResource connect and settings}"/>
+                            <Button Name="Settings" Content="Settings" Style="{StaticResource connect and settings}" />
                         </WrapPanel>
                     </GroupBox>
                     <Views:FlightBoard/>
