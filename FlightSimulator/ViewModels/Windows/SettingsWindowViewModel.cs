@@ -21,7 +21,7 @@ namespace FlightSimulator.ViewModels.Windows
 
         public SettingsWindowViewModel()
         {
-            model = new SettingsModel();
+            model = new ApplicationSettingsModel();
         }
 
         public string FlightServerIP
@@ -29,6 +29,7 @@ namespace FlightSimulator.ViewModels.Windows
             get { return model.FlightServerIP; }
             set
             {
+                
                 model.FlightServerIP = value;
                 NotifyPropertyChanged("FlightServerIP");
             }
@@ -65,6 +66,8 @@ namespace FlightSimulator.ViewModels.Windows
         {
             model.ReloadSettings();
         }
+
+
 
         #region Commands
         #region ClickCommand

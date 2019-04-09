@@ -67,11 +67,16 @@
     <Compile Include="Model\ApplicationSettingsModel.cs" />
     <Compile Include="Model\CommandHandler.cs" />
     <Compile Include="Model\EventArgs\VirtualJoystickEventArgs.cs" />
+    <Compile Include="Model\Interface\IFlightComponentModel.cs" />
     <Compile Include="Model\Interface\ISettingsModel.cs" />
-    <Compile Include="Model\SettingsModel.cs" />
+    <Compile Include="Model\SlidersModel.cs" />
+    <Compile Include="Model\TrackFlightModel.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />
     <Compile Include="ViewModels\FlightBoardViewModel.cs" />
-    <Compile Include="ViewModels\IViewModel.cs" />
+    <Compile Include="ViewModels\Interface\IFlightComponentViewModel.cs" />
+    <Compile Include="ViewModels\Interface\IViewModel.cs" />
+    <Compile Include="ViewModels\SlidersViewModel.cs" />
+    <Compile Include="ViewModels\TrackFlightViewModel.cs" />
     <Compile Include="ViewModels\Windows\SettingsWindowViewModel.cs" />
     <Compile Include="Views\FlightBoard.xaml.cs">
       <DependentUpon>FlightBoard.xaml</DependentUpon>
@@ -86,6 +91,7 @@
     <Compile Include="Views\Manual.xaml.cs">
       <DependentUpon>Manual.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SliderViewModel.cs" />
     <Compile Include="Views\TextScript.xaml.cs">
       <DependentUpon>TextScript.xaml</DependentUpon>
     </Compile>

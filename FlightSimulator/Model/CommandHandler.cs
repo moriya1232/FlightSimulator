@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace FlightSimulator.Model
@@ -25,6 +26,12 @@ namespace FlightSimulator.Model
         public void Execute(object parameter)
         {
             _action();
+        }
+
+        private void OKClicked(object sender, RoutedEventArgs e)
+        {
+            //זה מה שאמור לקרות: אבל אין לנו פה בכלל ממברים וכאלה מתאימים אז אינלי מושג
+            //model.SaveSettings();
         }
     }
 }

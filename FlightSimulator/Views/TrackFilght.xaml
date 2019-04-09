@@ -11,7 +11,7 @@
             <GroupBox FontSize="20" HorizontalAlignment="Center" DockPanel.Dock="Top">
                 <WrapPanel>
                     <Button Name="Connect" Content="Connect" Margin="15"/>
-                    <Button Name="Settings" Content="Settings" Margin="15"/>
+                    <Button Name="Settings" Content="Settings" Margin="15" Click="SettingsClicked"/>
                 </WrapPanel>
             </GroupBox>
             <Views:FlightBoard/>
