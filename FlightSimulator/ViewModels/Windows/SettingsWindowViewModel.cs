@@ -10,13 +10,18 @@ using System.Windows.Input;
 
 namespace FlightSimulator.ViewModels.Windows
 {
-    public class SettingsWindowViewModel : BaseNotify
+    public class SettingsWindowViewModel : BaseNotify, IViewModel
     {
         private ISettingsModel model;
 
         public SettingsWindowViewModel(ISettingsModel model)
         {
             this.model = model;
+        }
+
+        public SettingsWindowViewModel()
+        {
+            model = new SettingsModel();
         }
 
         public string FlightServerIP
