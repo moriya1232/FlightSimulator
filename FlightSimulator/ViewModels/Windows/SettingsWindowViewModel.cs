@@ -25,15 +25,9 @@ namespace FlightSimulator.ViewModels.Windows
             model.SaveSettings();
             CloseWindow();
 
-            // כאן צריך לסגור את החלון של
-            // settings
-            // (איך??)
-            // Inotify??
-
         }
 
         #endregion
-
         public SettingsWindowViewModel(ISettingsModel model, Window win)
         {
             this.model = model;
