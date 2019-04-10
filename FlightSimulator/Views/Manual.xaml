@@ -8,8 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="500">
     <DockPanel LastChildFill="True">
         <!--AILERON-->
-        <TextBlock DockPanel.Dock="Top" Margin="10,0,0,0" FontSize="15" HorizontalAlignment="Center"> &#x27f5; aileron &#x27f6;</TextBlock>
-        <!--ELEVATOR-->
+      <TextBlock DockPanel.Dock="Top" Margin="10,0,0,0" FontSize="15" HorizontalAlignment="Center"> &#x27f5; aileron &#x27f6;</TextBlock>
+      
+      <!--ELEVATOR-->
         <TextBlock Text=" &#x27f5; elevator &#x27f6;" DockPanel.Dock="Right" Margin="0" FontSize="15" VerticalAlignment="Center">
             <TextBlock.LayoutTransform>
                 <RotateTransform Angle="90" />
