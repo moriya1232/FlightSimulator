@@ -13,18 +13,18 @@ namespace FlightSimulator.Model
         private double lon;
         private double lat;
 
-        TrackFlightModel(Communication ci)
+        public TrackFlightModel()
         {
-            this.communicationInfo = ci;
+            this.communicationInfo = new Communication();
         }
 
-        private double Lat
+        public double Lat
         {
             get { return this.lat; }
             set { this.lat = value; }
         }
 
-        private double Lon
+        public double Lon
         {
             get { return this.lon; }
             set {

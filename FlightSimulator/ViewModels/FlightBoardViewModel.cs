@@ -1,11 +1,6 @@
-﻿using FlightSimulator.Model.Interface;
-using System;
-using System.Collections.Generic;
-using System.Windows.Input;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 using FlightSimulator.Model;
-using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace FlightSimulator.ViewModels
 {
@@ -15,18 +10,24 @@ namespace FlightSimulator.ViewModels
 
         public double Lon
         {
-            get;
+            get { return this.model.Lon; }
         }
 
         public double Lat
         {
             get;
         }
-
+        
         FlightBoardViewModel()
         {
-            //this.model = new TrackFlightModel();
-            //model.pro
+            this.model = new TrackFlightModel();
+        }
+
+        private ICommand connectCommand;
+        private ICommand ConnectCommand { get { return connectCommand ?? (connectCommand = new CommandHandler(() => OnClickConnect())); } }
+        void OnClickConnect()
+        {
+          
         }
     }
 }
