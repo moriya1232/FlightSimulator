@@ -9,13 +9,13 @@ namespace FlightSimulator.Model
 {
     class TrackFlightModel
     {
-        private Communication cummunicationInfo;
+        private Communication communicationInfo;
         private double lon;
         private double lat;
 
         TrackFlightModel(Communication ci)
         {
-            this.cummunicationInfo = ci;
+            this.communicationInfo = ci;
         }
 
         private double Lat
@@ -34,7 +34,7 @@ namespace FlightSimulator.Model
 
         public void open(string ip, int port)
         {
-            this.cummunicationInfo.open(ip, port);
+            this.communicationInfo.open(ip, port);
         }
     }
 }

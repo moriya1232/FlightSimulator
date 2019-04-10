@@ -29,5 +29,15 @@ namespace FlightSimulator.Views
             vm = new SlidersViewModel();
             this.DataContext = vm;
         }
+
+        private void RudderSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void ThrottleSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }
