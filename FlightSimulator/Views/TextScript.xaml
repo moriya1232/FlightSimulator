@@ -9,7 +9,7 @@
     <Grid>
         <ScrollViewer Margin="0,0,0.667,10">
             <StackPanel>
-                <TextBox x:Name="Script" Height="300" />
+                <TextBox x:Name="Script" Height="300"/>
                 <WrapPanel HorizontalAlignment="Center">
                     <Button Content="OK" Margin="10"/>
                     <Button Content="Clear" Margin="10"/>

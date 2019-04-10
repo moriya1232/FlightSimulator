@@ -29,5 +29,9 @@ namespace FlightSimulator
             InitializeComponent();
         }
 
+        private void TrackFilght_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
