@@ -21,6 +21,15 @@ namespace FlightSimulator.ViewModels
         {
             //model = new TrackFlightModel(new Communication);
         }
+        
+        private ICommand connectCommand;
+        private ICommand ConnectCommand { get { return connectCommand ?? (connectCommand = new CommandHandler(() => OnClickConnect())); } }
+        void OnClickConnect()
+        {
+          int i=0;
+            i++;
+
+        }
 
         
     }
