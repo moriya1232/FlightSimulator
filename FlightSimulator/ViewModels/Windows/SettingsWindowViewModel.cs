@@ -13,6 +13,11 @@ namespace FlightSimulator.ViewModels.Windows
     public class SettingsWindowViewModel : BaseNotify, IViewModel
     {
         private ISettingsModel model;
+        #region OkCommand
+        private ICommand _okCommand;
+        public ICommand OkCommand => _okCommand ?? (_okCommand = new CommandHandler(() => MyOnClick()));
+        private void MyOnClick() => model.SaveSettings();
+        #endregion
 
         public SettingsWindowViewModel(ISettingsModel model)
         {
@@ -29,7 +34,6 @@ namespace FlightSimulator.ViewModels.Windows
             get { return model.FlightServerIP; }
             set
             {
-                
                 model.FlightServerIP = value;
                 NotifyPropertyChanged("FlightServerIP");
             }

@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Communication.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -91,7 +92,6 @@
     <Compile Include="Views\Manual.xaml.cs">
       <DependentUpon>Manual.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SliderViewModel.cs" />
     <Compile Include="Views\TextScript.xaml.cs">
       <DependentUpon>TextScript.xaml</DependentUpon>
     </Compile>

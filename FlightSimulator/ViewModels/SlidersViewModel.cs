@@ -1,6 +1,7 @@
 ﻿using FlightSimulator.Model;
 using FlightSimulator.Model.Interface;
 using System;
+using System.Windows.Input;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace FlightSimulator.ViewModels
 {
-    class SlidersViewModel : IFlightComponentViewModel
+    class SlidersViewModel : BaseNotify, IViewModel
     {
-        private IFlightComponentModel model;
+        private SlidersModel model;
 
         public SlidersViewModel()
         {
@@ -20,25 +21,22 @@ namespace FlightSimulator.ViewModels
         //properties of the model
         public double Rudder
         {
-            get
-            {
-                return model.Rudder;
-            }
-            set
-            {
-                model.Rudder = value;
+            get { return this.model.Rudder; }
+            set {
+                this.model.Rudder = value;
+                NotifyPropertyChanged("Rudder");
             }
         }
         public double Throttle
         {
-            get
-            {
-                return model.Throttle;
-            }
+            get { return this.model.Throttle; }
             set
             {
-                model.Throttle = value;
+                this.model.Throttle = value;
+                NotifyPropertyChanged("Throttle");
             }
         }
+
+
     }
 }

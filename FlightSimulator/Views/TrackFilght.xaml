@@ -17,8 +17,5 @@
             <Views:FlightBoard/>
         </DockPanel>
 
-
-
-
     </Grid>
 </UserControl>

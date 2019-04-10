@@ -26,7 +26,7 @@ namespace FlightSimulator.Views
         public Manual()
         {
             InitializeComponent();
-            vm = new SliderViewModel();
+            vm = new SlidersViewModel();
             this.DataContext = vm;
         }
     }
