@@ -15,8 +15,17 @@ namespace FlightSimulator.ViewModels.Windows
         private ISettingsModel model;
         #region OkCommand
         private ICommand _okCommand;
-        public ICommand OkCommand => _okCommand ?? (_okCommand = new CommandHandler(() => MyOnClick()));
-        private void MyOnClick() => model.SaveSettings();
+        public ICommand OkCommand => _okCommand ?? (_okCommand = new CommandHandler(() => OkClicked()));
+        private void OkClicked()
+        {
+            model.SaveSettings();
+            // כאן צריך לסגור את החלון של
+            // settings
+            // (איך??)
+            // Inotify??
+
+        }
+
         #endregion
 
         public SettingsWindowViewModel(ISettingsModel model)
@@ -101,6 +110,7 @@ namespace FlightSimulator.ViewModels.Windows
         private void OnCancel()
         {
             model.ReloadSettings();
+            //כאן צריך לסגור את החלון!
         }
         #endregion
         #endregion

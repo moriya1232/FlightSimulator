@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BackgroundConverter.cs" />
     <Compile Include="Communication.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -72,6 +73,9 @@
     <Compile Include="Model\Interface\ISettingsModel.cs" />
     <Compile Include="Model\SlidersModel.cs" />
     <Compile Include="Model\TrackFlightModel.cs" />
+    <Compile Include="ScriptBackgroundChangeByTextConverter.xaml.cs">
+      <DependentUpon>ScriptBackgroundChangeByTextConverter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BaseNotify.cs" />
     <Compile Include="ViewModels\FlightBoardViewModel.cs" />
     <Compile Include="ViewModels\Interface\IFlightComponentViewModel.cs" />
@@ -102,6 +106,10 @@
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScriptBackgroundChangeByTextConverter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

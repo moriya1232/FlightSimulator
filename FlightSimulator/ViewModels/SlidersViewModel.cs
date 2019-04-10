@@ -18,7 +18,7 @@ namespace FlightSimulator.ViewModels
             this.model = new SlidersModel();
         }
 
-        //properties of the model
+        //properties
         public double Rudder
         {
             get { return this.model.Rudder; }

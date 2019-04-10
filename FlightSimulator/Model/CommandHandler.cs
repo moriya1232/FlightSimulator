@@ -27,11 +27,5 @@ namespace FlightSimulator.Model
         {
             _action();
         }
-
-        private void OKClicked(object sender, RoutedEventArgs e)
-        {
-            //זה מה שאמור לקרות: אבל אין לנו פה בכלל ממברים וכאלה מתאימים אז אינלי מושג
-            //model.SaveSettings();
-        }
     }
 }

@@ -25,7 +25,7 @@
             <TextBox x:Name="command_port" Grid.Row="2" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightInfoIP}"></TextBox>
         </Grid>
         <WrapPanel HorizontalAlignment="Center">
-            <Button x:Name="Cancel" HorizontalAlignment="Center" Margin="15,15,15,15" Padding="5" Content="Cancel">
+            <Button x:Name="Cancel" HorizontalAlignment="Center" Margin="15,15,15,15" Padding="5" Content="Cancel" Command="{Binding CancelCommand}">
             </Button>
             <Button x:Name="OK" Grid.Row="3" HorizontalAlignment="Center" Margin="15,15,15,15" Padding="5"  Content="OK" Command="{Binding OkCommand}"
                     >

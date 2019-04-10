@@ -10,28 +10,26 @@
         <!--AILERON-->
         <TextBlock DockPanel.Dock="Top" Margin="10,0,0,0" FontSize="15" HorizontalAlignment="Center"> &#x27f5; aileron &#x27f6;</TextBlock>
         <!--ELEVATOR-->
-        <TextBlock Text=" &#x27f5; elevator &#x27f6;" DockPanel.Dock="Right" Margin="0" FontSize="15" VerticalAlignment="Center">
+        <TextBlock Text=" &#x27f5; elevator &#x27f6;" DockPanel.Dock="Right" FontSize="15" VerticalAlignment="Center">
             <TextBlock.LayoutTransform>
                 <RotateTransform Angle="90" />
             </TextBlock.LayoutTransform>
         </TextBlock>
         <!--RUDDER-->
-        <StackPanel DockPanel.Dock="Bottom">
-           
-            <Slider x:Name="rudderSlider" Minimum="0" Maximum="10" Value="5" TickFrequency="1" TickPlacement="BottomRight" DockPanel.Dock="Bottom" Margin="90,5,120,5"/>
-            <TextBlock DockPanel.Dock="Bottom" Margin="0,0,40,0" FontSize="15" HorizontalAlignment="Center">  &#x27f5; rudder &#x27f6;
-            </TextBlock>
-        </StackPanel>
+        <Slider x:Name="rudder" Minimum="0" Maximum="10" Value="5" TickFrequency="1" TickPlacement="BottomRight" DockPanel.Dock="Bottom" Margin="90,5,120,5"/>
+        <TextBlock DockPanel.Dock="Bottom" Margin="0,0,40,0" FontSize="15" HorizontalAlignment="Center">  &#x27f5; rudder &#x27f6;
+        </TextBlock>
         <!--THROTTLE-->
-        <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-            <TextBlock Text=" &#x27f5; throttle  &#x27f6;" DockPanel.Dock="Left" Margin="10" FontSize="15" VerticalAlignment="Center">
-                <TextBlock.LayoutTransform>
-                    <RotateTransform Angle="90" />
-                </TextBlock.LayoutTransform>
-            </TextBlock>
-            <Slider x:Name="throttle" Minimum="0" Maximum="10" Value ="5" TickFrequency="1" TickPlacement="TopLeft" DockPanel.Dock="Left" Orientation="Vertical" Margin="-100,0,0,0"/>
-            <TextBlock Name="throttleBinding" Text="{Binding Throttle}"></TextBlock>
-        </StackPanel>
+        <Slider x:Name="throttle" Minimum="0" Maximum="10" TickFrequency="1"
+                TickPlacement="TopLeft" Orientation="Vertical" Margin="5,50,5,50" DockPanel.Dock="Left" Value="5"/>
+        <!--<Label Name="ThrottleSlider" Content="{Binding ElementName=throttle, Path=IsKeyboardFocusWithin }"/>-->
+
+        <TextBlock Text=" &#x27f5; throttle  &#x27f6;" DockPanel.Dock="Left" Margin="10" FontSize="15" VerticalAlignment="Center">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="90" />
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <!--<TextBlock Name="throttleBinding" Text="{Binding Throttle}"></TextBlock>-->
         <Views:Joystick Margin="10"/>
-        </DockPanel>
+    </DockPanel>
 </UserControl>
