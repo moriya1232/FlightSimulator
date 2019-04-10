@@ -2,6 +2,8 @@
 using FlightSimulator.Model.Interface;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +14,17 @@ namespace FlightSimulator.ViewModels.Windows
 {
     public class SettingsWindowViewModel : BaseNotify, IViewModel
     {
+        private Window window;
         private ISettingsModel model;
+
         #region OkCommand
         private ICommand _okCommand;
         public ICommand OkCommand => _okCommand ?? (_okCommand = new CommandHandler(() => OkClicked()));
         private void OkClicked()
         {
             model.SaveSettings();
+            CloseWindow();
+
             // כאן צריך לסגור את החלון של
             // settings
             // (איך??)
@@ -28,14 +34,17 @@ namespace FlightSimulator.ViewModels.Windows
 
         #endregion
 
-        public SettingsWindowViewModel(ISettingsModel model)
+        public SettingsWindowViewModel(ISettingsModel model, Window win)
         {
             this.model = model;
+            this.window = win;
+
         }
 
-        public SettingsWindowViewModel()
+        public SettingsWindowViewModel(Window win)
         {
             model = new ApplicationSettingsModel();
+            this.window = win;
         }
 
         public string FlightServerIP
@@ -68,7 +77,7 @@ namespace FlightSimulator.ViewModels.Windows
             }
         }
 
-     
+
 
         public void SaveSettings()
         {
@@ -110,10 +119,17 @@ namespace FlightSimulator.ViewModels.Windows
         private void OnCancel()
         {
             model.ReloadSettings();
-            //כאן צריך לסגור את החלון!
+            CloseWindow();
         }
         #endregion
         #endregion
+        
+
+        private void CloseWindow()
+        {
+            if (this.window!=null) { this.window.Close(); }
+        }
     }
 }
+    
 

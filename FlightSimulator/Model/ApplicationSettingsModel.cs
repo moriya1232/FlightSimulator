@@ -1,16 +1,25 @@
 ﻿using FlightSimulator.Model.Interface;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FlightSimulator.Model
 {
-    public class ApplicationSettingsModel : ISettingsModel
+
+
+    //אולי צריך להוריד את הירושה שך i notify
+    //ואת onpreperty changed
+    public class ApplicationSettingsModel : ISettingsModel,INotifyPropertyChanged
     {
+        
         #region Singleton
         private static ISettingsModel m_Instance = null;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public static ISettingsModel Instance
         {
             get
@@ -49,5 +58,14 @@ namespace FlightSimulator.Model
         {
             Properties.Settings.Default.Reload();
         }
+
+        //maybe remove
+        private void OnPropertyChanged(string p)
+        {
+            PropertyChangedEventHandler ph = PropertyChanged;
+            if (ph != null) { ph(this, new PropertyChangedEventArgs(p)); }
+        }
+
     }
 }
+ 
