@@ -12,7 +12,7 @@ namespace FlightSimulator.Model
     {
         public void operation(string data)
         {
-             SendDataToSimulator.Instance.SendCommands(data);
+             Commands.Instance.SendCommands(data);
         }
 
 

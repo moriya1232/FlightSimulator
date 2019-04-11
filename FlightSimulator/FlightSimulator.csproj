@@ -61,7 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Communication.cs" />
+    <Compile Include="Info.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -73,7 +73,7 @@
     <Compile Include="Model\SlidersModel.cs" />
     <Compile Include="Model\TextScriptModel.cs" />
     <Compile Include="Model\TrackFlightModel.cs" />
-    <Compile Include="SendDataToSimulator.cs" />
+    <Compile Include="Commands.cs" />
     <Compile Include="ViewModels\TextScriptViewModel.cs" />
     <Compile Include="Views\BackgroundConverter.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />

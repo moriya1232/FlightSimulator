@@ -9,7 +9,7 @@ using System.IO;
 
 namespace FlightSimulator
 {
-    class Communication
+    class Info
     {
         public bool Connected { get; set; } = false;
         public bool Stop { get; set; } = false;

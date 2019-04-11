@@ -10,15 +10,15 @@ namespace FlightSimulator.Model
 {
     class TrackFlightModel
     {
-        private Communication info;
-        private SendDataToSimulator sdts;
+        private Info info;
+        private Commands sdts;
         private double lon;
         private double lat;
 
         public TrackFlightModel()
         {
-            this.info = new Communication();
-            this.sdts = new SendDataToSimulator();
+            this.info = new Info();
+            this.sdts = new Commands();
         }
 
         public double Lat

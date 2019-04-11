@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FlightSimulator
 {
-    class SendDataToSimulator
+    class Commands
     {
         private TcpClient client;
 
@@ -18,14 +18,14 @@ namespace FlightSimulator
         public bool Connected { get; set; } = false;
 
         #region Singleton
-        private static SendDataToSimulator m_Instance = null;
-        public static SendDataToSimulator Instance
+        private static Commands m_Instance = null;
+        public static Commands Instance
         {
             get
             {
                 if (m_Instance == null)
                 {
-                    m_Instance = new SendDataToSimulator();
+                    m_Instance = new Commands();
                 }
                 return m_Instance;
             }

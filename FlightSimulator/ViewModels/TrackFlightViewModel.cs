@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Threading;
+using System.Drawing;
 
 namespace FlightSimulator.ViewModels
 {
     class TrackFlightViewModel : IViewModel
     {
         private TrackFlightModel model;
+        
 
         // Command for the settings window
         private ICommand settingsCommand;
@@ -30,12 +32,12 @@ namespace FlightSimulator.ViewModels
             if (model.IsConnected()) // if there is a connection, establish new connections to info and commands
             {
                 model.StopRead();
-                SendDataToSimulator.Instance.Reset();
+                Commands.Instance.Reset();
                 System.Threading.Thread.Sleep(1000); // let info server finish last read
             }
             new Thread(delegate ()
             {
-                SendDataToSimulator.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
+                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
             }).Start();
             model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
 
