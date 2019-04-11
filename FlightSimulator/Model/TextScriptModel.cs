@@ -14,5 +14,7 @@ namespace FlightSimulator.Model
         {
              SendDataToSimulator.Instance.SendCommands(data);
         }
+
+
     }
 }

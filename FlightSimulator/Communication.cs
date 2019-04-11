@@ -5,58 +5,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.IO;
 
 namespace FlightSimulator
 {
     class Communication
     {
+        public bool Connected { get; set; } = false;
+        public bool Stop { get; set; } = false;
+        private TcpListener server;
         private TcpClient client;
-        private TcpListener connectedTo; // other name for a server
-        private bool connected;
+        private BinaryReader reader;
 
-        // we want some signal if the open method went successfuly or not
         public void open(string ip, int port)
         {
-            this.connectedTo = new TcpListener(IPAddress.Parse(ip), port);
-            connectedTo.Start();
+            this.server = new TcpListener(IPAddress.Parse(ip), port);
+            server.Start();
         }
 
         public string read()
         {
-            // Buffer for reading data
             Byte[] bytes = new Byte[256];
             String data = null;
 
-            // Enter the listening loop.
             while (true)
             {
                 Console.Write("Waiting for a connection... ");
-
-                // Perform a blocking call to accept requests.
-                // You could also user server.AcceptSocket() here.
-                TcpClient client = connectedTo.AcceptTcpClient();
+                TcpClient client = server.AcceptTcpClient();
                 Console.WriteLine("Connected!");
 
                 data = null;
-
-                // Get a stream object for reading and writing
                 NetworkStream stream = client.GetStream();
-
                 int i;
-
-                // Loop to receive all the data sent by the client.
                 while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
                 {
-                    // Translate data bytes to a ASCII string.
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                     Console.WriteLine("Received: {0}", data);
 
-                    // Process the data sent by the client.
+               
                     data = data.ToUpper();
 
                     byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
 
-                    // Send back a response.
                     stream.Write(msg, 0, msg.Length);
                     Console.WriteLine("Sent: {0}", data);
                 }
@@ -64,10 +54,27 @@ namespace FlightSimulator
             return data;
         }
 
-        // Might need to switch the order of these commands
+        public string[] Read()
+        {
+            if (!Connected)
+            {
+                Connected = true;
+                client = server.AcceptTcpClient();
+                reader = new BinaryReader(client.GetStream());
+            }
+            string input = ""; 
+            char s;
+            while ((s = reader.ReadChar()) != '\n') input += s;
+            string[] param = input.Split(','); 
+            string[] ret = { param[0], param[1] }; 
+            return ret;
+
+        }
+
+     
         public void close()
         {
-            this.connectedTo.Stop();
+            this.server.Stop();
             this.client.Close();
         }
 

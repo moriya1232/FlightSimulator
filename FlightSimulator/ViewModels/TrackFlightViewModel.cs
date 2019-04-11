@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Threading;
 
 namespace FlightSimulator.ViewModels
 {
@@ -21,15 +22,27 @@ namespace FlightSimulator.ViewModels
         {
             model = new TrackFlightModel();
         }
-        
-        private ICommand _connectCommand;
-        public ICommand ConnectCommand => _connectCommand ?? (_connectCommand = new CommandHandler(() => ConnectClicked()));
-        private void ConnectClicked()
+
+        private ICommand connectCommand;
+        public ICommand ConnectCommand => connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked()));
+        void ConnectClicked()
         {
-            //comminucation here!!!
-            model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort);
+            if (model.IsConnected()) // if there is a connection, establish new connections to info and commands
+            {
+                model.StopRead();
+                SendDataToSimulator.Instance.Reset();
+                System.Threading.Thread.Sleep(1000); // let info server finish last read
+            }
+            new Thread(delegate ()
+            {
+                SendDataToSimulator.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
+            }).Start();
+            model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
+
+
         }
 
-        
+
+
     }
 }

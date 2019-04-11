@@ -13,10 +13,9 @@ namespace FlightSimulator
     {
         private TcpClient client;
 
-        private BinaryWriter writer;
-        public bool Connected { get; set; } = false;
+        private BinaryWriter writer; 
 
-        public bool FirstTime { get; set; } = true;
+        public bool Connected { get; set; } = false;
 
         #region Singleton
         private static SendDataToSimulator m_Instance = null;
@@ -33,7 +32,6 @@ namespace FlightSimulator
         }
         #endregion
 
-
         public void Reset() { m_Instance = null; }
         // connect to server
         public void Connect(string ip, int port)
@@ -43,30 +41,23 @@ namespace FlightSimulator
             while (!client.Connected) // keep trynig to connect
             {
                 try { client.Connect(ep); }
-
                 catch (Exception) { }
-
             }
             Connected = true;
+            writer = new BinaryWriter(client.GetStream());
 
         }
-
-        // send commands to the simulator
         public void SendCommands(string input)
         {
             if (string.IsNullOrEmpty(input)) return;
-            if (FirstTime) { writer = new BinaryWriter(client.GetStream()); FirstTime = false; }
             string[] commands = input.Split('\n');
-
             foreach (string command in commands)
             {
                 string tmp = command + "\r\n";
-                writer.Write(tmp);
-                System.Threading.Thread.Sleep(2000); // 2 seconds delay
-                Console.WriteLine("Command sent!!!!");
+                writer.Write(System.Text.Encoding.ASCII.GetBytes(tmp));
+                System.Threading.Thread.Sleep(2000);
             }
         }
-
     }
 }
 
