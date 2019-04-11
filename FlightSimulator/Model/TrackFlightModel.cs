@@ -32,7 +32,7 @@ namespace FlightSimulator.Model
             }
         }
 
-        public void open(string ip, int port)
+        public void Open(string ip, int port)
         {
             this.communicationInfo.open(ip, port);
         }

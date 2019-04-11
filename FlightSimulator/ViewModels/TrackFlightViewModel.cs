@@ -19,7 +19,7 @@ namespace FlightSimulator.ViewModels
 
         public TrackFlightViewModel()
         {
-            //model = new TrackFlightModel(new Communication);
+            model = new TrackFlightModel();
         }
         
         private ICommand _connectCommand;
@@ -27,7 +27,7 @@ namespace FlightSimulator.ViewModels
         private void ConnectClicked()
         {
             //comminucation here!!!
-
+            model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort);
         }
 
         
