@@ -11,7 +11,7 @@ namespace FlightSimulator.ViewModels
         private string data;
         private ICommand okCommand;
         // draw is used for drawing the background with pink or white
-        private Brush draw = Brushes.LightBlue;
+        private Brush draw = Brushes.White;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
