@@ -9,9 +9,10 @@
     <DockPanel LastChildFill="True">
         <!--AILERON-->
         <TextBlock DockPanel.Dock="Top" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="⟵ aileron ⟶ "/><InlineUIContainer>
-                    <TextBlock x:Name="AileronValue" Text ="{Binding Aileron, ElementName=Joystick, StringFormat=\{0:0.00\}, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right"/>
+                    <TextBlock x:Name="AileronValue" Text ="{Binding Aileron, ElementName=Joystick, StringFormat=0.0#}" HorizontalAlignment="Right"/>
                 </InlineUIContainer></TextBlock>
         <!--ELEVATOR-->
+        <TextBlock DockPanel.Dock ="Top" x:Name="ElevatorValue" HorizontalAlignment="Right" Text ="{Binding Elevator, ElementName=Joystick, StringFormat=0.0#}"/>
         <TextBlock Text=" &#x27f5; elevator &#x27f6;" DockPanel.Dock="Right" Margin="0" FontSize="15" VerticalAlignment="Center">
             <TextBlock.LayoutTransform>
                 <RotateTransform Angle="90" />
@@ -38,6 +39,6 @@
             <TextBlock Name="throttleValue" Text ="{Binding ElementName=throttleSlider,
                                 UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}" HorizontalAlignment="Right"/>
         </StackPanel>
-        <Views:Joystick Margin="10" x:Name="Joystick"/>
+        <Views:Joystick Margin="10" x:Name="Joystick" Aileron="{Binding Aileron}" Elevator="{Binding Elevator}"/>
     </DockPanel>
 </UserControl>

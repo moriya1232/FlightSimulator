@@ -37,6 +37,26 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+        public double Elevator
+        {
+            get { return this.model.Elevator; }
+            set
+            {
+                this.model.Elevator = value;
+                NotifyPropertyChanged("Elevator");
+            }
+        }
+
+        public double Aileron
+        {
+            get { return this.model.Aileron; }
+            set
+            {
+                this.model.Aileron = value;
+                NotifyPropertyChanged("Aileron");
+            }
+        }
+
 
     }
 }
