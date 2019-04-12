@@ -70,10 +70,12 @@
     <Compile Include="Model\EventArgs\VirtualJoystickEventArgs.cs" />
     <Compile Include="Model\Interface\IFlightComponentModel.cs" />
     <Compile Include="Model\Interface\ISettingsModel.cs" />
+    <Compile Include="Model\ManualModel.cs" />
     <Compile Include="Model\SlidersModel.cs" />
     <Compile Include="Model\TextScriptModel.cs" />
     <Compile Include="Model\TrackFlightModel.cs" />
     <Compile Include="Commands.cs" />
+    <Compile Include="ViewModels\ManualViewModel.cs" />
     <Compile Include="ViewModels\TextScriptViewModel.cs" />
     <Compile Include="Views\BackgroundConverter.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />

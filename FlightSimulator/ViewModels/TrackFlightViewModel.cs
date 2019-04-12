@@ -29,11 +29,11 @@ namespace FlightSimulator.ViewModels
         public ICommand ConnectCommand => connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked()));
         void ConnectClicked()
         {
-            if (model.IsConnected()) // if there is a connection, establish new connections to info and commands
+            if (model.IsConnected())
             {
                 model.StopRead();
                 Commands.Instance.Reset();
-                System.Threading.Thread.Sleep(1000); // let info server finish last read
+                System.Threading.Thread.Sleep(1000);
             }
             new Thread(delegate ()
             {

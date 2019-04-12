@@ -21,23 +21,13 @@ namespace FlightSimulator.Views
     /// </summary>
     public partial class Manual : UserControl
     {
-        private IViewModel vm;
+        private ManualViewModel vm;
 
         public Manual()
         {
             InitializeComponent();
-            vm = new SlidersViewModel();
+            vm = new ManualViewModel();
             this.DataContext = vm;
-        }
-
-        private void RudderSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-        }
-
-        private void ThrottleSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
         }
     }
 }
