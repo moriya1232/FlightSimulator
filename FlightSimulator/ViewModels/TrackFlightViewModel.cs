@@ -15,9 +15,7 @@ namespace FlightSimulator.ViewModels
     class TrackFlightViewModel : IViewModel
     {
         private TrackFlightModel model;
-        
 
-        // Command for the settings window
         private ICommand settingsCommand;
 
         public TrackFlightViewModel()
@@ -26,18 +24,19 @@ namespace FlightSimulator.ViewModels
         }
 
         private ICommand connectCommand;
-        public ICommand ConnectCommand => connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked()));
+        public ICommand ConnectCommand { get { return connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked())); } }
         void ConnectClicked()
         {
-            if (model.IsConnected())
-            {
+             if (model.IsConnected())
+             {
                 model.StopRead();
-                Commands.Instance.Reset();
-                System.Threading.Thread.Sleep(1000);
-            }
+              Commands.Instance.Reset();
+             System.Threading.Thread.Sleep(1000);
+             }
             new Thread(delegate ()
             {
-                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
+            Console.WriteLine("The port is: " + Convert.ToString(ApplicationSettingsModel.Instance.FlightCommandPort));
+                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, 5402); // conect to simulator
             }).Start();
             model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
 
@@ -46,5 +45,5 @@ namespace FlightSimulator.ViewModels
 
 
 
+        }
     }
-}

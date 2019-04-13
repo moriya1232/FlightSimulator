@@ -13,70 +13,34 @@ namespace FlightSimulator
     {
         public bool Connected { get; set; } = false;
         public bool Stop { get; set; } = false;
-        private TcpListener server;
+        private TcpListener listener;
         private TcpClient client;
         private BinaryReader reader;
 
-        public void open(string ip, int port)
+        public void Open(string ip, int port)
         {
-            this.server = new TcpListener(IPAddress.Parse(ip), port);
-            server.Start();
+            if (listener != null) Close();
+            listener = new TcpListener(new IPEndPoint(IPAddress.Parse(ip), port));
+            listener.Start();
         }
 
-        public string read()
-        {
-            Byte[] bytes = new Byte[256];
-            String data = null;
-
-            while (true)
-            {
-                Console.Write("Waiting for a connection... ");
-                TcpClient client = server.AcceptTcpClient();
-                Console.WriteLine("Connected!");
-
-                data = null;
-                NetworkStream stream = client.GetStream();
-                int i;
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
-                {
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    Console.WriteLine("Received: {0}", data);
-
-               
-                    data = data.ToUpper();
-
-                    byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
-
-                    stream.Write(msg, 0, msg.Length);
-                    Console.WriteLine("Sent: {0}", data);
-                }
-            }
-            return data;
-        }
+        public void Close() { client.Close(); listener.Stop(); Connected = false; }
 
         public string[] Read()
         {
             if (!Connected)
             {
                 Connected = true;
-                client = server.AcceptTcpClient();
+                client = listener.AcceptTcpClient();
                 reader = new BinaryReader(client.GetStream());
             }
-            string input = ""; 
+            string input = "";
             char s;
             while ((s = reader.ReadChar()) != '\n') input += s;
-            string[] param = input.Split(','); 
-            string[] ret = { param[0], param[1] }; 
+            string[] param = input.Split(',');
+            string[] ret = { param[0], param[1] };
             return ret;
 
         }
-
-     
-        public void close()
-        {
-            this.server.Stop();
-            this.client.Close();
-        }
-
     }
 }

@@ -9,7 +9,40 @@ namespace FlightSimulator.Model
 {
     class ManualModel
     {
-        public void implement(string command)
+        private double rudder;
+        private double throttle;
+        private double aileron;
+        private double elevator;
+        private Info info;
+        private Commands sdts;
+
+        public ManualModel()
+        {
+            this.info = new Info();
+            this.sdts = new Commands();
+        }
+
+        public double Rudder
+        {
+            set { this.rudder = value; }
+        }
+
+        public double Throttle
+        {
+            set { this.throttle = value; }
+        }
+
+        public double Aileron
+        {
+            set { this.aileron = value; }
+        }
+
+        public double Elevator
+        {
+            set { this.elevator = value; }
+        }
+
+        public void sendCommand(string command)
         {
             if(Commands.Instance.Connected)
             {
@@ -19,5 +52,20 @@ namespace FlightSimulator.Model
                 }).Start();
             }
         }
+
+      /*  public void GetCommand()
+        {
+            new Thread(delegate ()
+            {
+                while (!info.Stop)
+                {
+                    string[] args = info.Read();
+                    Aileron = Convert.ToDouble(args[21]);
+                    Elevator = Convert.ToDouble(args[22]);
+                    Rudder = Convert.ToDouble(args[23]);
+                    Throttle = Convert.ToDouble(args[25]);
+                }
+            }).Start();
+        }*/
     }
 }

@@ -37,13 +37,13 @@ namespace FlightSimulator.Model
 
         public void Open(string ip, int port)
         {
-            this.info.open(ip, port);
-            StartRead();
+            info.Open(ip, port);
+            GetData();
         }
 
-        void StartRead()
+        void GetData()
         {
-            new Thread(delegate ()
+            new Task(delegate ()
             {
                 while (!info.Stop)
                 {

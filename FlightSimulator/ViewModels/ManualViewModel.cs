@@ -9,35 +9,36 @@ namespace FlightSimulator.ViewModels
 {
     class ManualViewModel
     {
-        private string throttleSet = "/controls/engines/current-engine/throttle";
-        private string rudderSet = "/controls/flight/rudder";
-        private string elevatorSet = "/controls/flight/elevator";
-        private string aileronSet = "/controls/flight/aileron";
+        private string throttlePath = "/controls/engines/current-engine/throttle";
+        private string rudderPath = "/controls/flight/rudder";
+        private string elevatorPath = "/controls/flight/elevator";
+        private string aileronPath = "/controls/flight/aileron";
         private ManualModel model;
 
         public ManualViewModel()
         {
             this.model = new ManualModel();
+            //this.model.GetCommand();
         }
 
         public double Rudder
         {
-            set => model.implement("set " + rudderSet + " " + Convert.ToString(value));
+            set => model.sendCommand("set " + rudderPath + " " + Convert.ToString(value));
         }
 
         public double Throttle
         {
-            set => model.implement("set " + throttleSet + " " + Convert.ToString(value));
+            set => model.sendCommand("set " + throttlePath + " " + Convert.ToString(value));
         }
 
         public double Aileron
         {
-            set => model.implement("set " + aileronSet + " " + Convert.ToString(value));
+            set => model.sendCommand("set " + aileronPath + " " + Convert.ToString(value));
         }
 
         public double Elevator
         {
-            set => model.implement("set " + elevatorSet + " " + Convert.ToString(value));
+            set => model.sendCommand("set " + elevatorPath + " " + Convert.ToString(value));
         }
     }
 }

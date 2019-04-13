@@ -13,7 +13,7 @@ namespace FlightSimulator
     {
         private TcpClient client;
 
-        private BinaryWriter writer; 
+        private BinaryWriter writer;
 
         public bool Connected { get; set; } = false;
 
@@ -33,7 +33,7 @@ namespace FlightSimulator
         #endregion
 
         public void Reset() { m_Instance = null; }
-        // connect to server
+
         public void Connect(string ip, int port)
         {
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ip), port);
@@ -47,6 +47,7 @@ namespace FlightSimulator
             writer = new BinaryWriter(client.GetStream());
 
         }
+
         public void SendCommands(string input)
         {
             if (string.IsNullOrEmpty(input)) return;

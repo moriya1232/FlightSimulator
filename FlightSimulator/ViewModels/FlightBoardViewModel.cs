@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using FlightSimulator.Model;
 using System.Windows.Input;
+using System;
 
 namespace FlightSimulator.ViewModels
 {
