@@ -24,9 +24,9 @@
             <TextBlock Padding="3" Margin="3" >Flight Server IP:</TextBlock>
             <TextBox x:Name="IP" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightServerIP}"></TextBox>
             <TextBlock Grid.Row="1" Padding="3" Margin="3">Flight Info Port:</TextBlock>
-            <TextBox x:Name="info_port" Grid.Row="1" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightCommandPort}"></TextBox>
+            <TextBox x:Name="info_port" Grid.Row="1" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightInfoPort}"></TextBox>
             <TextBlock Grid.Row="2" Padding="3" Margin="3">Flight Command Port:</TextBlock>
-            <TextBox x:Name="command_port" Grid.Row="2" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightInfoPort}"></TextBox>
+            <TextBox x:Name="command_port" Grid.Row="2" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightCommandPort}"></TextBox>
         </Grid>
         <WrapPanel HorizontalAlignment="Center">
             <Button x:Name="Cancel" HorizontalAlignment="Center" Margin="15,15,15,15" Padding="5" Content="Cancel" Command="{Binding CancelCommand}">
