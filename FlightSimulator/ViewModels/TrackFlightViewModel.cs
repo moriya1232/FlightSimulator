@@ -36,7 +36,7 @@ namespace FlightSimulator.ViewModels
             new Thread(delegate ()
             {
             Console.WriteLine("The port is: " + Convert.ToString(ApplicationSettingsModel.Instance.FlightCommandPort));
-                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, 5402); // conect to simulator
+                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
             }).Start();
             model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
 

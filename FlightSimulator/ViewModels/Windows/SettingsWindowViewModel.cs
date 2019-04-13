@@ -60,7 +60,7 @@ namespace FlightSimulator.ViewModels.Windows
                 NotifyPropertyChanged("FlightCommandPort");
             }
         }
-
+        
         public int FlightInfoPort
         {
             get { return model.FlightInfoPort; }
