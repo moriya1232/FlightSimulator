@@ -36,9 +36,9 @@
             </TextBlock>
             <Slider x:Name="throttleSlider" Minimum="-1" Maximum="1" Value="{Binding Path=Throttle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TickFrequency="0.1" 
                     TickPlacement="TopLeft" DockPanel.Dock="Left" Orientation="Vertical" Margin="0,0,0,50"/>
-            <TextBlock Name="throttleValue" Text ="{Binding ElementName=throttleSlider,
-                                UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}" HorizontalAlignment="Right"/>
+            <TextBlock Name="throttleValue" Text ="{Binding Aileron,
+                                UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:0.00}}" HorizontalAlignment="Right"/>
         </StackPanel>
-        <Views:Joystick Margin="10" x:Name="Joystick" Aileron="{Binding Aileron}" Elevator="{Binding Elevator}"/>
+        <Views:Joystick Margin="10" x:Name="Joystick" Aileron="{Binding ElementName=AileronValue, Path=Text, Mode=OneWayToSource}" Elevator="{Binding ElementName=ElevatorValue, Path=Text, Mode=OneWayToSource}"/>
     </DockPanel>
 </UserControl>
