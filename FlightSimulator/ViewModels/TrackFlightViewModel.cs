@@ -9,19 +9,32 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Threading;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace FlightSimulator.ViewModels
 {
-    class TrackFlightViewModel : IViewModel
+    class TrackFlightViewModel : BaseNotify,IViewModel
     {
         private TrackFlightModel model;
 
-        private ICommand settingsCommand;
+        public double Lon { get; set; }
+
+        public double Lat { get; set; }
 
         public TrackFlightViewModel()
         {
             model = new TrackFlightModel();
+            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
+            {
+                if (e.PropertyName == "Lat") Lat = model.Lat;
+                else if (e.PropertyName == "Lon") Lon = model.Lon;
+                NotifyPropertyChanged(e.PropertyName);
+            };
+
         }
+
+        private ICommand settingsCommand;
+
 
         private ICommand connectCommand;
         public ICommand ConnectCommand { get { return connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked())); } }

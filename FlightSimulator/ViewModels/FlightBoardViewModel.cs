@@ -26,10 +26,10 @@ namespace FlightSimulator.ViewModels
         FlightBoardViewModel()
         {
             this.model = new TrackFlightModel();
-            model.LatLonChanged += delegate (Object sender, PropertyChangedEventArgs e)
+            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                if (e.PropertyName == "Lat") Lat = model.Lat;
-                else if (e.PropertyName == "Lon") Lon = model.Lon;
+                if (e.PropertyName == "Lat") { Lat = model.Lat; }
+                else if (e.PropertyName == "Lon") { Lon = model.Lon; }
                 NotifyPropertyChanged(e.PropertyName);
             };
         }

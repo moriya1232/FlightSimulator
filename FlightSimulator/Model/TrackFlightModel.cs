@@ -6,16 +6,16 @@ using System.ComponentModel;
 using FlightSimulator;
 using System.Threading.Tasks;
 using System.Threading;
+using FlightSimulator.ViewModels;
 
 namespace FlightSimulator.Model
 {
-    class TrackFlightModel
+    class TrackFlightModel : BaseNotify
     {
         private Info info;
         private Commands sdts;
         private double lon;
         private double lat;
-        public event PropertyChangedEventHandler LatLonChanged;
 
         // a constructor
         public TrackFlightModel()
@@ -28,7 +28,9 @@ namespace FlightSimulator.Model
         public double Lat
         {
             get { return this.lat; }
-            set { this.lat = value; }
+            set { this.lat = value;
+                NotifyPropertyChanged("Lat");
+            }
         }
 
         // property Lon
@@ -37,6 +39,7 @@ namespace FlightSimulator.Model
             get { return this.lon; }
             set {
                 this.lon = value;
+                NotifyPropertyChanged("Lon");
             }
         }
 
