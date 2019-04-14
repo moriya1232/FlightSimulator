@@ -16,6 +16,7 @@ namespace FlightSimulator.Model
         private Info info;
         private Commands sdts;
 
+        // constructor
         public ManualModel()
         {
             this.info = new Info();
@@ -42,6 +43,7 @@ namespace FlightSimulator.Model
             set { this.elevator = value; }
         }
 
+        // send the given command to the simulator
         public void sendCommand(string command)
         {
             if(Commands.Instance.Connected)
@@ -52,20 +54,5 @@ namespace FlightSimulator.Model
                 }).Start();
             }
         }
-
-      /*  public void GetCommand()
-        {
-            new Thread(delegate ()
-            {
-                while (!info.Stop)
-                {
-                    string[] args = info.Read();
-                    Aileron = Convert.ToDouble(args[21]);
-                    Elevator = Convert.ToDouble(args[22]);
-                    Rudder = Convert.ToDouble(args[23]);
-                    Throttle = Convert.ToDouble(args[25]);
-                }
-            }).Start();
-        }*/
     }
 }

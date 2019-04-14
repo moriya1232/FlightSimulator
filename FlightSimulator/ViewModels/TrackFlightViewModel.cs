@@ -31,14 +31,17 @@ namespace FlightSimulator.ViewModels
              {
                 model.StopRead();
               Commands.Instance.Reset();
+             // a second delay
              System.Threading.Thread.Sleep(1000);
              }
+            // open the Commands channel, where our app is a client and the simulator is the server
             new Thread(delegate ()
             {
-            Console.WriteLine("The port is: " + Convert.ToString(ApplicationSettingsModel.Instance.FlightCommandPort));
-                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
+                // the actual connect to the server, which is the simulator
+                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort);
             }).Start();
-            model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
+            // open the Info channel, where our app is the server and the simulator is the client
+            model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort);
 
 
         }

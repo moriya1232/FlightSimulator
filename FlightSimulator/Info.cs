@@ -9,6 +9,8 @@ using System.IO;
 
 namespace FlightSimulator
 {
+    // info opens a server that makes our app capable of receives info
+    // from the simulator
     class Info
     {
         public bool Connected { get; set; } = false;
@@ -17,6 +19,7 @@ namespace FlightSimulator
         private TcpClient client;
         private BinaryReader reader;
 
+        // open the server by the given ip and port
         public void Open(string ip, int port)
         {
             if (listener != null) Close();
@@ -26,6 +29,7 @@ namespace FlightSimulator
 
         public void Close() { client.Close(); listener.Stop(); Connected = false; }
 
+        // read data from the server
         public string[] Read()
         {
             if (!Connected)
@@ -37,10 +41,9 @@ namespace FlightSimulator
             string input = "";
             char s;
             while ((s = reader.ReadChar()) != '\n') input += s;
-            string[] param = input.Split(',');
-            string[] ret = { param[0], param[1] };
-            return ret;
-
+            string[] data = input.Split(',');
+            string[] result = { data[0], data[1] };
+            return result;
         }
     }
 }

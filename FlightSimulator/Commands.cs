@@ -15,8 +15,10 @@ namespace FlightSimulator
 
         private BinaryWriter writer;
 
+        // defaultive get and set methods for connected status
         public bool Connected { get; set; } = false;
 
+        // singleton variable
         #region Singleton
         private static Commands m_Instance = null;
         public static Commands Instance
@@ -34,11 +36,12 @@ namespace FlightSimulator
 
         public void Reset() { m_Instance = null; }
 
+        // connect to the simulator, which is the server
         public void Connect(string ip, int port)
         {
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ip), port);
             client = new TcpClient();
-            while (!client.Connected) // keep trynig to connect
+            while (!client.Connected)
             {
                 try { client.Connect(ep); }
                 catch (Exception) { }
@@ -48,6 +51,7 @@ namespace FlightSimulator
 
         }
 
+        // send the given command to the server
         public void SendCommands(string input)
         {
             if (string.IsNullOrEmpty(input)) return;
