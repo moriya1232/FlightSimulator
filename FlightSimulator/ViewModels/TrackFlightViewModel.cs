@@ -34,6 +34,14 @@ namespace FlightSimulator.ViewModels
         }
 
         private ICommand settingsCommand;
+        public ICommand SettingsCommand { get { return settingsCommand ?? (settingsCommand = new CommandHandler(() => SettingsClicked())); } }
+        void SettingsClicked()
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog();
+        }
+
+
         private ICommand connectCommand;
         public ICommand ConnectCommand { get { return connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked())); } }
         void ConnectClicked()
