@@ -16,37 +16,35 @@ namespace FlightSimulator.ViewModels
     class TrackFlightViewModel : BaseNotify,IViewModel
     {
         private TrackFlightModel model;
+        private double? lat;
+        private double? lon;
 
-        public double Lon { get; set; }
+        public double? Lon { get { return model.Lon; } }
 
-        public double Lat { get; set; }
+        public double? Lat { get { return model.Lat; } }
 
         public TrackFlightViewModel()
         {
             model = new TrackFlightModel();
             model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                if (e.PropertyName == "Lat") Lat = model.Lat;
-                else if (e.PropertyName == "Lon") Lon = model.Lon;
                 NotifyPropertyChanged(e.PropertyName);
             };
 
         }
 
         private ICommand settingsCommand;
-
-
         private ICommand connectCommand;
         public ICommand ConnectCommand { get { return connectCommand ?? (connectCommand = new CommandHandler(() => ConnectClicked())); } }
         void ConnectClicked()
         {
-             if (model.IsConnected())
-             {
+            if (model.IsConnected())
+            {
                 model.StopRead();
-              Commands.Instance.Reset();
-             // a second delay
-             System.Threading.Thread.Sleep(1000);
-             }
+                Commands.Instance.Reset();
+                // a second delay
+                System.Threading.Thread.Sleep(1000);
+            }
             // open the Commands channel, where our app is a client and the simulator is the server
             new Thread(delegate ()
             {
@@ -60,6 +58,5 @@ namespace FlightSimulator.ViewModels
         }
 
 
-
-        }
+    }
     }

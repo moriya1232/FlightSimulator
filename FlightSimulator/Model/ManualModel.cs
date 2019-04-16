@@ -19,8 +19,8 @@ namespace FlightSimulator.Model
         // constructor
         public ManualModel()
         {
-            this.info = new Info();
-            this.sdts = new Commands();
+            this.info = Info.Instance;
+            this.sdts = Commands.Instance;
         }
 
         public double Rudder

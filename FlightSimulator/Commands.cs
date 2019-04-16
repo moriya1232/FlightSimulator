@@ -18,6 +18,10 @@ namespace FlightSimulator
         // defaultive get and set methods for connected status
         public bool Connected { get; set; } = false;
 
+        private Commands()
+        {
+
+        }
         // singleton variable
         #region Singleton
         private static Commands m_Instance = null;

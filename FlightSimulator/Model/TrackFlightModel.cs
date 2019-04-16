@@ -14,18 +14,24 @@ namespace FlightSimulator.Model
     {
         private Info info;
         private Commands sdts;
-        private double lon;
-        private double lat;
+        private double? lon;
+        private double? lat;
 
         // a constructor
         public TrackFlightModel()
         {
-            this.info = new Info();
-            this.sdts = new Commands();
+            this.info = Info.Instance;
+            info.PropertyChanged += Info_PropertyChanged;
+            this.sdts = Commands.Instance;
+        }
+
+        private void Info_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            NotifyPropertyChanged(e.PropertyName);
         }
 
         // property Lat
-        public double Lat
+        public double? Lat
         {
             get { return this.lat; }
             set { this.lat = value;
@@ -34,7 +40,7 @@ namespace FlightSimulator.Model
         }
 
         // property Lon
-        public double Lon
+        public double? Lon
         {
             get { return this.lon; }
             set {
@@ -42,6 +48,12 @@ namespace FlightSimulator.Model
                 NotifyPropertyChanged("Lon");
             }
         }
+
+        // returns the connection status
+        public bool IsConnected() { return info.Connected; }
+
+        // stops the data receiving
+        public void StopRead() { info.Stop = true; }
 
         // open the Info channel and receive data in another thread
         public void Open(string ip, int port)
@@ -57,18 +69,12 @@ namespace FlightSimulator.Model
             {
                 while (!info.Stop)
                 {
-                    // get the updated info and set the new values
+                    //get the updated info and set the new values
                     string[] args = info.Read();
                     Lon = Convert.ToDouble(args[0]);
                     Lat = Convert.ToDouble(args[1]);
                 }
             }).Start();
         }
-
-        // returns the connection status
-        public bool IsConnected() { return info.Connected; }
-
-        // stops the data receiving
-        public void StopRead() { info.Stop = true; }
     }
 }

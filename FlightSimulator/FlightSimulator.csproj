@@ -79,7 +79,6 @@
     <Compile Include="ViewModels\TextScriptViewModel.cs" />
     <Compile Include="Views\BackgroundConverter.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />
-    <Compile Include="ViewModels\FlightBoardViewModel.cs" />
     <Compile Include="ViewModels\Interface\IFlightComponentViewModel.cs" />
     <Compile Include="ViewModels\Interface\IViewModel.cs" />
     <Compile Include="ViewModels\SlidersViewModel.cs" />
@@ -101,9 +100,6 @@
     <Compile Include="Views\TextScript.xaml.cs">
       <DependentUpon>TextScript.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TrackFilght.xaml.cs">
-      <DependentUpon>TrackFilght.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -124,10 +120,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TextScript.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TrackFilght.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

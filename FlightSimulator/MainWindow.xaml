@@ -26,7 +26,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Views:TrackFilght Grid.Column="0" Loaded="TrackFilght_Loaded"/>
+            <Views:FlightBoard Grid.Column="0" Loaded="TrackFilght_Loaded"/>
             <TabControl Grid.Column="1">
                 <TabItem Header="Manual">
                     <Views:Manual/>
