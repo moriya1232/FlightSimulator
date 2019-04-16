@@ -10,7 +10,7 @@ using FlightSimulator.ViewModels;
 
 namespace FlightSimulator.Model
 {
-    class TrackFlightModel : BaseNotify
+    class FlightBoardModel : BaseNotify
     {
         private Info info;
         private Commands sdts;
@@ -18,7 +18,7 @@ namespace FlightSimulator.Model
         private double? lat;
 
         // a constructor
-        public TrackFlightModel()
+        public FlightBoardModel()
         {
             this.info = Info.Instance;
             info.PropertyChanged += Info_PropertyChanged;

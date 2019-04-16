@@ -25,12 +25,12 @@ namespace FlightSimulator.Views
     /// </summary>
     public partial class FlightBoard : UserControl
     {
-        private TrackFlightViewModel vm;
+        private FlightBoardViewModel vm;
         ObservableDataSource<Point> planeLocations = null;
         public FlightBoard()
         {
             InitializeComponent();
-            this.vm = new TrackFlightViewModel();
+            this.vm = new FlightBoardViewModel();
             vm.PropertyChanged += Vm_PropertyChanged;
             DataContext = vm;
         }

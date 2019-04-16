@@ -13,9 +13,9 @@ using System.ComponentModel;
 
 namespace FlightSimulator.ViewModels
 {
-    class TrackFlightViewModel : BaseNotify,IViewModel
+    class FlightBoardViewModel : BaseNotify,IViewModel
     {
-        private TrackFlightModel model;
+        private FlightBoardModel model;
         private double? lat;
         private double? lon;
 
@@ -23,9 +23,9 @@ namespace FlightSimulator.ViewModels
 
         public double? Lat { get { return model.Lat; } }
 
-        public TrackFlightViewModel()
+        public FlightBoardViewModel()
         {
-            model = new TrackFlightModel();
+            model = new FlightBoardModel();
             model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
                 NotifyPropertyChanged(e.PropertyName);
