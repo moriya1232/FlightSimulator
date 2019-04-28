@@ -45,7 +45,7 @@ namespace FlightSimulator.Model
             get { return this.lon; }
             set {
                 this.lon = value;
-                NotifyPropertyChanged("Lon");
+                //NotifyPropertyChanged("Lon");
             }
         }
 

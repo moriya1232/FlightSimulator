@@ -88,8 +88,8 @@ namespace FlightSimulator
             char s;
             while ((s = reader.ReadChar()) != '\n') input += s;
             string[] data = input.Split(',');
-            this.Lon = double.Parse(data[0]);
-            this.Lat = double.Parse(data[1]);
+            //this.Lon = double.Parse(data[0]);
+            //this.Lat = double.Parse(data[1]);
             string[] result = { data[0], data[1] };
 
             return result;
