@@ -21,12 +21,15 @@ namespace FlightSimulator
         private BinaryReader reader;
         private double? lon;
         private double? lat;
-
+        private int lonCounter;
+        private int latCounter;
 
         private Info()
         {
             lon = null;
             lat = null;
+            lonCounter = 0;
+            latCounter = 0;
         }
         #region Singleton
         private static Info m_Instance = null;
@@ -50,7 +53,8 @@ namespace FlightSimulator
             set
             {
                 this.lat = value;
-                NotifyPropertyChanged("Lat");
+                if (latCounter > 1) { NotifyPropertyChanged("Lat"); }
+                else { ++latCounter; }
             }
         }
 
@@ -61,7 +65,8 @@ namespace FlightSimulator
             set
             {
                 this.lon = value;
-                NotifyPropertyChanged("Lon");
+                if (lonCounter > 1) { NotifyPropertyChanged("Lon"); }
+                else { ++lonCounter; }
             }
         }
 
