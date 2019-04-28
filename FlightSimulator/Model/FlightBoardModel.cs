@@ -53,7 +53,7 @@ namespace FlightSimulator.Model
         public bool IsConnected() { return info.Connected; }
 
         // stops the data receiving
-        public void StopRead() { info.Stop = true; }
+        public void StopRead() { if (info.Connected) { info.Stop = true; } }
 
         // open the Info channel and receive data in another thread
         public void Open(string ip, int port)
