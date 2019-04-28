@@ -12,8 +12,8 @@ namespace FlightSimulator.Model
 {
     class FlightBoardModel : BaseNotify
     {
-        private Info info;
-        private Commands sdts;
+        public Info info;
+        public Commands sdts;
         private double? lon;
         private double? lat;
 

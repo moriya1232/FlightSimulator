@@ -30,7 +30,14 @@ namespace FlightSimulator.ViewModels
             {
                 NotifyPropertyChanged(e.PropertyName);
             };
+        }
 
+        private ICommand disconnectCommand;
+        public ICommand DisconnectCommand { get { return disconnectCommand ?? (disconnectCommand = new CommandHandler(() => DisconnectClicked())); } }
+        void DisconnectClicked()
+        {
+            this.model.sdts.Disconnect();
+            this.model.StopRead();
         }
 
         private ICommand settingsCommand;

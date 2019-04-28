@@ -12,6 +12,7 @@
         <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" >
             <Button x:Name="Connect"  Content="Connect" Margin="15 15 15 15" Padding="10 5 10 5" FontSize="20"  Command="{Binding ConnectCommand}"/>
             <Button x:Name="Settings" Content="Settings" Margin="15 15 15 15" Padding="10 5 10 5" FontSize="20" Command="{Binding SettingsCommand}"/>
+            <Button x:Name="Disconnect" Content="Disconnect" Margin="15 15 15 15" Padding="10 5 10 5" FontSize="20" Command="{Binding DisconnectCommand}"/>
         </WrapPanel>
         <Grid>
             <Grid.Resources>

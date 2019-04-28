@@ -55,6 +55,8 @@ namespace FlightSimulator
 
         }
 
+        public void Disconnect() { this.client.Close(); Connected = false; }
+
         // send the given command to the server
         public void SendCommands(string input)
         {
