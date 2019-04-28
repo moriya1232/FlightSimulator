@@ -1,0 +1,241 @@
+commit 402b8b097996d85ffdcf4ac8f2686aea8ee645e4
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Sun Apr 28 19:44:59 2019 +0300
+
+    Disconnect2
+
+commit e05cb93d8491a16f8bb2632d9e5616d838f20da0
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Sun Apr 28 19:13:36 2019 +0300
+
+    Disconnected butoon is now supported
+
+commit 0194bc703afb81ecde5cff8cea3494e0ac512088
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Thu Apr 18 00:49:08 2019 +0300
+
+    i think we finish
+
+commit 56e96373c976e0fb16cc61c8a266271c997d1d63
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Thu Apr 18 00:47:29 2019 +0300
+
+    numbers in textblock are good
+
+commit 232095214acb1500ba2447fc0f3140b77c3781f9
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Wed Apr 17 14:28:45 2019 +0300
+
+    aileron gets X value
+    elevator gets Y value
+    and both values divided by 124
+
+commit cdf4b748aeaac69aed8ca1ed00c3357c3705cb6a
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Wed Apr 17 02:25:53 2019 +0300
+
+    name of two classes has benn changed.
+
+commit 66a1604aa8a4242b0125ab1daf0769041897b435
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 16 20:52:50 2019 +0300
+
+    settings window
+
+commit 9691bc457f53ab3c970222a9a1b8ab2c33395fec
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 16 20:30:13 2019 +0300
+
+    view of manual
+
+commit 794d9b480bcbeb7e537a02ecada74d022466c05e
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 16 19:07:04 2019 +0300
+
+    graph works
+
+commit a36aaac3044dd25471e2c18bb0f1844bfc3bd933
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Mon Apr 15 01:14:17 2019 +0300
+
+    i think that i did the graph, but i didnt check it because i need the script
+
+commit ce5fb2fe326fa0576b9af7f7fa1244aaa2421c61
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Sun Apr 14 22:37:26 2019 +0300
+
+    joystick work
+
+commit daefb468ae1a904f8c49151eb50b797c73e45858
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Sun Apr 14 16:31:38 2019 +0300
+
+    comments & tried to do the graph...
+
+commit 5d7d6c248d2bb36e1a2d3921232852a86642b5fe
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Sun Apr 14 02:21:43 2019 +0300
+
+    info  & command port
+
+commit d59fc42b8e526b3f1f41b9dccd043bab527335a3
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Sun Apr 14 02:13:31 2019 +0300
+
+    fix ip info port
+
+commit 5daf2deae37b8022da5195acb8f1090cbaf6d100
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Sat Apr 13 20:32:33 2019 +0300
+
+    Application is now supporting being a client and being a server at the same time
+
+commit 2f85de9a1aa2aef6f11a0cff358cc87cdf770bfb
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Sat Apr 13 01:48:02 2019 +0300
+
+    Autopilot and Manual are working
+
+commit b06e60bf6e9f4589105b75174ffb2dd7f2920c0e
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Fri Apr 12 18:10:49 2019 +0300
+
+    elevator, aileron
+
+commit a35e572ad73d2fbf47f5128610933167f3eae5ff
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Fri Apr 12 12:04:31 2019 +0300
+
+    Now supporting background-color changed
+
+commit 78983cb0a2161ea2c95e0d695638fddf602f8ceb
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Fri Apr 12 02:33:40 2019 +0300
+
+    try to change the background to pink - doesnt work right now
+
+commit b38d47566acf26136a0f035d105624b80f67bece
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Fri Apr 12 00:21:17 2019 +0300
+
+    connection with simulation is working
+
+commit 317b59bba5af8452d35fc00043bb37217c70b485
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Thu Apr 11 03:36:16 2019 +0300
+
+    keep working on the connection...
+
+commit 0c957176c2d9a81a9d32b165868d30e0f2e6cefc
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Thu Apr 11 01:30:15 2019 +0300
+
+    num
+
+commit 1de7bf1b472b73ea41006c410a99666574cfed5d
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Thu Apr 11 00:49:16 2019 +0300
+
+    bla bla
+
+commit e7c0ff3ff0f176f4cca6b11b75d1777d6ba94a7d
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Thu Apr 11 00:24:01 2019 +0300
+
+    success pass to connect clicked
+
+commit 5f04108e8d0e5d855efefd30e9a78f8d56374c5d
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Thu Apr 11 00:07:43 2019 +0300
+
+    connect passing
+
+commit ec40043c1aa5679a4341c5be445e821600a68d3d
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Wed Apr 10 23:52:22 2019 +0300
+
+    just a nice try to connect the fucking server
+
+commit b3a0874d29a02ce66001382a5cc36c47520309f0
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Wed Apr 10 17:33:44 2019 +0300
+
+    תיקונים קטנים
+
+commit a25465fc876240336a6c57fb58d912e654b539aa
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Wed Apr 10 16:06:16 2019 +0300
+
+    /
+
+commit 8b53bde35af41da643662c1b4c9a435079cc7ccc
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Wed Apr 10 16:05:33 2019 +0300
+
+    close settings
+
+commit 1a6ce2f5bbb769aa221247fa0b671ac03f193ae5
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Wed Apr 10 13:41:57 2019 +0300
+
+    שינויים של עומר
+
+commit b73e9c4c956e7ce85dfcdddbbcbc2a79d66bf7b4
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Wed Apr 10 10:15:45 2019 +0300
+
+    כמה ניסיונות שאמשיך ברגע שאקום
+
+commit 31e57b90adf992bce6278bb8ed36053432e914a8
+Author: omeromer312@gmail.com <omeromer312@gmail.com>
+Date:   Wed Apr 10 03:13:30 2019 +0300
+
+    added functionality of server, and a try of commands
+
+commit fcff46dc8eba4650cce61695c722c25862ee1463
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 04:55:32 2019 +0300
+
+    הוספת הרבה קלאסים וביינדינג לאייפי ופורט
+
+commit 80e59b972fc40495167b595833fc66b7a0c8cc16
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 03:00:04 2019 +0300
+
+    העיצוב מופרד להרבה user controls
+
+commit fa100f0f1e5c3c1d780c786c11c56197a8d27e60
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 01:29:23 2019 +0300
+
+    הכנסתי לעוד קצת רכיבי usercontrol
+
+commit 724e6ec2f2b95af17576b09e53120b4b9fa8f54a
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 00:57:25 2019 +0300
+
+    bla
+
+commit 95a153bb9d263dbaac5fccb39d0e14ec29820bbe
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 00:52:26 2019 +0300
+
+    בדיקות
+
+commit 4039ddfae21f5f378bd41f1446732d37947560d5
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 00:11:33 2019 +0300
+
+    חיצים
+
+commit 4df37abdf2e19838723231d8261a6eb8b1bcb7be
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 00:04:39 2019 +0300
+
+    start working!
+
+commit 49e8bb7c7abadc42ef8da8e199290dc2bf03d97e
+Author: moriya leopold <moriya1232@gmail.com>
+Date:   Tue Apr 9 00:02:25 2019 +0300
+
+    Add .gitignore and .gitattributes.

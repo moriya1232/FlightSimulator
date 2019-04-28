@@ -10,6 +10,7 @@ namespace FlightSimulator.ViewModels
         private TextScriptModel model;
         private string data;
         private ICommand okCommand;
+        private ICommand clearCommand;
         // draw is used for drawing the background with pink or white
         private Brush draw = Brushes.White;
 
@@ -49,11 +50,29 @@ namespace FlightSimulator.ViewModels
                     string toBeSent = Data;
                     Data = ""; // remove text
                     Draw = Brushes.White; // make the background white again
+                    NotifyPropertyChanged("Data");
                     model.operation(toBeSent);
                 }));
             }
         }
 
+        private void OnClear()
+        {
+            // delete the text and notify the xaml that the text property has changed
+            Data = "";
+            Draw = Brushes.White; // make the background white again
+            NotifyPropertyChanged("Data");
+        }
+
+        public ICommand ClearCommand
+        {
+            get
+            {
+                return clearCommand ?? (clearCommand = new CommandHandler(() => OnClear()));
+            }
+        }
+
+        
         public void NotifyPropertyChanged(string name) {
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
